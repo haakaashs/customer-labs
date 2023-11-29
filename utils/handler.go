@@ -46,6 +46,6 @@ func webHooks(webhookURL string, payload []byte) {
 		return
 	}
 
-	fmt.Println("Response Code:", response.Status)
+	log.Println("weebHooks Response Code:", response.Status)
 	log.Println("exit " + funcDesc)
 }
