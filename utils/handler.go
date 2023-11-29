@@ -29,10 +29,10 @@ func GoHandler(w http.ResponseWriter, r *http.Request) {
 	log.Println("exit " + funcDesc)
 
 	// write response
-	// w.WriteHeader(http.StatusOK)
-	// w.Write(responseData)
-	log.Println("response: ", responseData)
-	webHooks("", responseData)
+	w.WriteHeader(http.StatusOK)
+	w.Write(responseData)
+	log.Println("response: ", string(responseData))
+	// webHooks("", responseData)
 	log.Println("exit " + funcDesc)
 }
 

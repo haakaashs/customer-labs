@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/go-worker", utils.GoHandler)
+	http.HandleFunc("/post-go-worker", utils.GoHandler)
 	go func() {
 		// if any error while start simulation
 		time.Sleep(time.Second * 2)
