@@ -1,7 +1,7 @@
 package main
 
 import (
-	"customer-lobs/utils"
+	"github.com/haakaashs/customer-labs/utils"
 	"log"
 	"net/http"
 	"time"
