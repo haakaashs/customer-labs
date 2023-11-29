@@ -22,16 +22,17 @@ func GoHandler(w http.ResponseWriter, r *http.Request) {
 		log.Println("error while decode")
 	}
 
+	log.Println("request: ", req)
 	channel := make(chan Responce)
-
 	go goWorker(req, channel)
 	responseData, _ := json.Marshal(<-channel)
 	log.Println("exit " + funcDesc)
 
 	// write response
-	w.WriteHeader(http.StatusOK)
-	w.Write(responseData)
-	// webHooks("", responseData)
+	// w.WriteHeader(http.StatusOK)
+	// w.Write(responseData)
+	log.Println("response: ", responseData)
+	webHooks("", responseData)
 	log.Println("exit " + funcDesc)
 }
 
